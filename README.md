@@ -3,7 +3,7 @@ Standard C++ programming course from Standford University, Spring, 2023.
 
 This course adopted the style of modern C++ from the outset, with a focus on C++11 and supplemented with some content from C++14 and 17. Since the course had limited coverage and practice on polymorphism, I used "C++ Primer" as a supplementary resource and worked on a high-quality project based on polymorphism.
 
-##Schedule
+## Schedule
 1. Welcome!
 2. Types and Structs
 3. Initialization and References
