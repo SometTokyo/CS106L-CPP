@@ -1,0 +1,19 @@
+{
+    "configurations": [
+      {
+        "name": "Your Configuration",
+        "includePath": [
+          "${workspaceFolder}/**",
+          "path/to/your/includes"
+        ],
+        "browse": {
+          "path": [
+            "${workspaceFolder}/**",
+            "path/to/your/includes"
+          ]
+        }
+      }
+    ],
+    "version": 4
+  }
+  

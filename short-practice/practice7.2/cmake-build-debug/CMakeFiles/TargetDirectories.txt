@@ -1,0 +1,3 @@
+/Users/yangbeichen/Downloads/practice7.2/cmake-build-debug/CMakeFiles/practice7_2.dir
+/Users/yangbeichen/Downloads/practice7.2/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/yangbeichen/Downloads/practice7.2/cmake-build-debug/CMakeFiles/rebuild_cache.dir

@@ -1,0 +1,43 @@
+Assignment 3: STL HashMap (short answer questions)
+Names:
+1.at() vs []
+  Explain the difference between at() and the implementation of the operator []. Wy did you have to overload one and not the other?
+  Hint: You will likely only need to read the header comments to do this
+
+  Answer: at() can throw an exception, while [] inserts the element and initializes it if not found.
+  Overloading [] provides an easy way to access the array. These two methods provide different functions and usage scenarios.
+  Answer:at()可以抛出异常，[]则是发现没有该元素时插入该元素并初始化。重载[]是提供一种简易的数组访问方式，这两种方法提供的功能和使用场景是不同的。
+
+2.Find vs. 𝓕𝓲𝓷𝓭
+  In addition to the HashMap::find member function, there is also a std::find function in the STL algorithms library. If you were searching for key k in HashMap m, is it preferable to call m.find(k) or std::find(m.begin(), m.end(), k)?
+  Hint: on average, there are a constant number of elements per bucket. Also, one of these functions has a faster Big-O complexity because one of them uses a loop while another does something smarter.
+
+  Answer: It's better to call m.find(k), which has lower complexity.
+  Answer:调用m.find(k)更好，复杂度更低。
+
+3.RAII?
+  This HashMap class is RAII-compliant. Explain why.
+
+  Answer: The destructor ensures that all resources are released after the scope ends.
+  Answer:析构函数保证了在作用域结束后释放所有资源。
+
+4.Increments
+  Briefly explain the implementation of HashMapIterator's operator++, which we provide for you. How does it work and what checks does it have?
+
+  Answer: The prefix increment first increments the node. If it is empty, it goes to the next bucket. If it is still empty, it returns itself;
+  otherwise, it returns the incremented node. The postfix increment first makes a copy to return itself and then uses the prefix operation to increment.
+  Answer:前缀递增首先递增节点，如果为空，则前往下一个桶，如果还是为空则返回自身，否则则返回递增后的节点；后缀递增则先制作一个副本来返回自身，然后再使用前缀运算来递增。
+
+5.Attachment Issues
+  Why is it that we need to implement the special member functions in the HashMap class, but we can default all the special member functions in the HashMapIterator class?
+  Hint: your answer should reference the Rule of Five (the Rule of 3 including move operations) vs. the Rule of Zero, and also talk about std::vector's copy constructor/assignment operator.
+
+  Answer: HashMap manages its dynamic memory and resources, such as nodes, so it follows the rule of five and needs to implement all SMFs in full.
+  The iterator only stores pointers and values and doesn't manage dynamic resources, so there's no need for a custom implementation.
+  Answer:HashMap自己管理动态内存和资源，例如节点，所以遵循rule of five，需要全部实现SMF，迭代器则只是存储指针和数值，自己并不管理动态资源，因此不需要自定义实现。
+
+6.Move Semantics
+  In your move constructor or move assignment operator, why did you have to std::move each member, even though the parameter (named rhs) is already an r-value reference?
+
+  Answer: Even though rhs is a right reference, its members might not be.
+  Answer:尽管rhs是右指引用，但是他的成员不一定是。
